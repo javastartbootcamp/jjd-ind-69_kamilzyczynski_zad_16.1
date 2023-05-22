@@ -1,7 +1,6 @@
 package pl.javastart.task;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public enum Season {
     SPRING(new String[]{"marzec", "kwiecień", "maj"}, "wiosna"),
@@ -25,11 +24,10 @@ public enum Season {
         return plTranslation;
     }
 
-    public static void findSeason(Scanner scanner) {
-        String choice = scanner.nextLine();
+    public static void findSeason(String userInput) {
         Season season = null;
         for (Season value : Season.values()) {
-            if (choice.toLowerCase().equals(value.getPlTranslation())) {
+            if (userInput.toLowerCase().equals(value.getPlTranslation())) {
                 season = value;
             }
         }

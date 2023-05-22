@@ -10,9 +10,7 @@ public class SeasonManager {
         for (Season value : Season.values()) {
             System.out.println(value.getPlTranslation());
         }
-
-        Season.findSeason(scanner);
+        String userInput = scanner.nextLine();
+        Season.findSeason(userInput);
     }
-
-
 }
