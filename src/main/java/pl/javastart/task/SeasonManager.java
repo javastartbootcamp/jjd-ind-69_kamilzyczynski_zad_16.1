@@ -1,5 +1,6 @@
 package pl.javastart.task;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SeasonManager {
@@ -11,6 +12,12 @@ public class SeasonManager {
             System.out.println(value.getPlTranslation());
         }
         String userInput = scanner.nextLine();
-        Season.findSeason(userInput);
+        Season season = Season.findSeason(userInput);
+        if (season != null) {
+            System.out.println("W tej porze roku są następujące miesiące:");
+            System.out.println(Arrays.toString(season.getMonths()));
+        } else {
+            System.out.println("Wprowadzono nieprawidłowe dane.");
+        }
     }
 }
